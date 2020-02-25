@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8"/>
+	<style type="text/css">
+	
+		*		{padding:0; margin:0;}
+		svg		{border:1px #eee solid;}
+
+	</style>
+
+	<script src="qrcode.js"></script>
+</head>
+<body>
+
+<script>
+
+	'use strict';
+
+	var
+	qrcodes = [
+
+		/* with all available options: */
+		 new QRCode({
+
+			 msg	:  'https://github.com/datalog/qrcode-svg'
+			,dim	:   256
+			,pad	:   41
+			,swp	:   1
+			,ecl	:  'L'
+			,pal	: ['#037','#f2f4f8']
+
+		}).svg()
+
+		/* message, dimention and padding: */
+		,new QRCode({
+
+			 msg	:  'default usage'
+			,dim	:   256
+			,pad	:   53
+
+		}).svg()
+
+		/* message, dimention and padding (yes, we can do 180 rotation with padding): */
+		,new QRCode({
+
+			 msg	:  'default usage'
+			,dim	:   256
+			,pad	:   203
+
+		}).svg()
+
+		/* ...or simple form: */
+		,new QRCode('Good Luck').svg()
+		
+	];
+
+
+	for( var c = 0; c < qrcodes.length; c++ ) {
+
+		document.body.appendChild( qrcodes[ c ] );
+	}
+
+</script>
+
+</body>
+</html>
