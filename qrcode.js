@@ -161,7 +161,7 @@ function QRCode( options ) {
 		,pad	:   41
 		,swp	:   0			/* swap the X and Y modules, some users have had issues with the QR Code */
 		,ecl	:  'M'
-		,pal	: ['#000','#fff']
+		,pal	: ['#000']
 	};
 
 	if('string' === typeof options ) {
@@ -211,7 +211,7 @@ function QRCode( options ) {
 		console.warn('Expected {pad} value could not be bigger than {dim} value');
 	}
 
-	if( !_checkColor( this.options.pal[ 0 ] ) || !_checkColor( this.options.pal[ 1 ] ) ) {
+	if( !_checkColor( this.options.pal[ 0 ] ) || this.options.pal[ 1 ] && !_checkColor( this.options.pal[ 1 ] ) ) {
 
 		this.options.pal = ['#900', '#fff8f8'];
 		console.warn('Expected {pal} value for foreground and/or background is not valid');
@@ -376,7 +376,7 @@ QRCode.prototype.svg = function() {
 				,'version'		: '1.1'
 			} );
 
-	res.appendChild( svg.el('path', {
+	if( _bg ) res.appendChild( svg.el('path', {
 
 				 'fill'			:  _bg
 				,'d'			: 'M0,0V' + _d + 'H' + _d + 'V0H0Z'

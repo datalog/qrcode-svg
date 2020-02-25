@@ -10,7 +10,7 @@
 
 	</style>
 
-	<script src="qrcode.js"></script>
+	<script src="qrcode.min.js"></script>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
 
 		}).svg()
 
-		/* message, dimention and padding: */
+		/* message, dimension and padding, background is transparent as it was not set: */
 		,new QRCode({
 
 			 msg	:  'default usage'
@@ -42,7 +42,7 @@
 
 		}).svg()
 
-		/* message, dimention and padding (yes, we can do 180 rotation with padding): */
+		/* message, dimension and padding (yes, we can do 180 rotation with padding): */
 		,new QRCode({
 
 			 msg	:  'default usage'
