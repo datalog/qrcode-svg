@@ -182,7 +182,7 @@ function QRCode( options ) {
 		this.options.swp = 0;
 	}
 
-	if('string' !== typeof this.options.msg) {
+	if('string' !== typeof this.options.msg ) {
 
 		throw new Error('Expected {msg} as string!');
 	}
@@ -340,7 +340,7 @@ QRCode.prototype.svg = function() {
 	_s = ( ( _d - ( 2 * _p ) ) / len ).toFixed( 4 ),
 	_m = [ _s, 0, 0, _s, _p, _p ],
 
-	_path = [];
+	_path = '';
 
 
 	for( var y = 0; y < len; y++ ) {
@@ -359,7 +359,7 @@ QRCode.prototype.svg = function() {
 					_x = y;
 				}
 
-				_path.push('M', _x, ',', _y, 'V', _y + 1, 'H', _x + 1, 'V', _y, 'H', _x, 'Z');
+				_path += 'M' + _x + ',' + _y + 'h1v1h-1v-1z';
 			}
 		}
 	}
@@ -385,7 +385,7 @@ QRCode.prototype.svg = function() {
 	res.appendChild( svg.el('path', {
 
 				 'transform'		: 'matrix(' + _m + ')'
-				,'d'			:  _path.join('')
+				,'d'			:  _path
 			} ) );
 
 	return res;
