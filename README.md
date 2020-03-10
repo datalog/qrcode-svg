@@ -13,22 +13,26 @@ svgNode = new QRCode("Hello World!");
 All other options:
 ```javascript
 var
-svgNode = new QRCode({
+svgNode = QRCode({
 
-     msg  :  'https://github.com/datalog/qrcode-svg'
-    ,dim  :   256
-    ,pad  :   41
-    ,swp  :   1
-    ,ecl  :  'L'
-    ,pal  : ['#037','#f2f4f8']
+     msg :  "Your message here"
+    ,dim :   300
+    ,pad :   6
+    ,mtx :   7
+    ,ecl :  "H"
+    ,ecb :   0
+    ,pal : ["#000000", "#f2f4f8"]
+    ,vrb :   1
 
 });
 ```
 
 ## Options
-* **msg** - QR Code message, obviously, this is **mandatory parameter**
-* **dim** - since QR Code is a square ``dim`` is equal to needed width or height in pixels, `256` pixels is set by default
-* **pad** - white space padding, `41` pixels is set by default, `0` is for no padding; if ``pad`` is greater than  half of the ``dim``, then QR Code will be rotated by 180 degrees
-* **swp** - swap the X and Y modules, `0` is set by default, `1` is for swapping
-* **ecl** - error correction level: `L`, `M`, `H`, `Q`
-* **pal** - palette, array of colors, `['#000']` is set by default, `['#000','#f2f4f8']` you may set second value for background
+* **msg** - QR Code ``message``, obviously, this is **mandatory parameter**.
+* **dim** - is equal to needed dimention (width or height) in pixels, default value is `256`.
+* **pad** - white space padding, default value is `4` blocks, set `0` for no padding; if ``pad`` is greater than  half of the ``dim``, then QR Code will be rotated by 180 degrees.
+* **mtx** - mask pattern from `0` to `7`, default value is `-1` and best suitable mask is choosen automatically
+* **ecl** - error correction level: `L`, `M`, `H`, `Q`, default value is `M`.
+* **ecb** - error correction level boost, default value is `1`, set `0` if no boost needed.
+* **pal** - is array of [`color`,`background-color`] strings that represent hex color codes, default value is [`'#000'`] along with transparent background. Set [`'#000'`,`'#fff'`] to make background opaque.
+* **vrb** - svg node is optimized to be compact and default value is `0`, set this parameter to `1` in case you need more verbose output.
