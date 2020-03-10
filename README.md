@@ -7,7 +7,7 @@ Pure javascript QR Code generator. Armed with elegant method for creating SVG no
 After `qrcode.min.js` is downloaded and connected to your html5 page, call:
 ```javascript
 var
-svgNode = new QRCode("Hello World!").svg();
+svgNode = new QRCode("Hello World!");
 ```
 
 All other options:
@@ -22,7 +22,7 @@ svgNode = new QRCode({
     ,ecl  :  'L'
     ,pal  : ['#037','#f2f4f8']
 
-}).svg()
+});
 ```
 
 ## Options
