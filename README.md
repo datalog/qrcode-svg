@@ -3,6 +3,9 @@
 ## QR Code svg generator
 Pure javascript QR Code generator. Armed with elegant method for creating SVG nodes.
 
+[QR Code svg generator](https://datalog.github.io/demo/qrcode-svg/) (Live demo)
+
+
 ## Easy to start
 After `qrcode.min.js` is downloaded and connected to your html5 page, call:
 ```javascript
