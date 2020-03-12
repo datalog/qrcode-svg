@@ -24,35 +24,28 @@
 		/* with all available options: */
 		 new QRCode({
 
-			 msg	:  'https://github.com/datalog/qrcode-svg'
-			,dim	:   256
-			,pad	:   41
-			,swp	:   1
-			,ecl	:  'L'
-			,pal	: ['#037','#f2f4f8']
+			 msg   :  'https://github.com/datalog/qrcode-svg'
+			,dim   :   256
+			,pad   :   4
+			,mtx   :   -1
+			,ecl   :  "H"
+			,ecb   :   1
+			,pal   : ["#037", "#f2f4f8"]
+			,vrb   :   0
 
-		}).svg()
+		})
 
-		/* message, dimension and padding, background is transparent as it was not set: */
+		/* message, background is transparent as it was not set: */
 		,new QRCode({
 
 			 msg	:  'default usage'
-			,dim	:   256
-			,pad	:   53
+			,ecl    :  'L'
 
-		}).svg()
+		})
 
-		/* message, dimension and padding (yes, we can do 180 rotation with padding): */
-		,new QRCode({
-
-			 msg	:  'default usage'
-			,dim	:   256
-			,pad	:   203
-
-		}).svg()
 
 		/* ...or simple form: */
-		,new QRCode('Good Luck').svg()
+		,new QRCode('Good Luck')
 		
 	];
 
