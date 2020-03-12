@@ -33,7 +33,7 @@ svgNode = QRCode({
 ## Options
 * **msg** - QR Code ``message``, obviously, this is **mandatory parameter**.
 * **dim** - is equal to needed dimention (width or height) in pixels, default value is `256`.
-* **pad** - white space padding, default value is `4` blocks, set `0` for no padding; if ``pad`` is greater than  half of the ``dim``, then QR Code will be rotated by 180 degrees.
+* **pad** - white space padding, default value is `4` blocks, set `0` for no padding.
 * **mtx** - mask pattern from `0` to `7`, default value is `-1` and best suitable mask is choosen automatically
 * **ecl** - error correction level: `L`, `M`, `H`, `Q`, default value is `M`.
 * **ecb** - error correction level boost, default value is `1`, set `0` if no boost needed.
