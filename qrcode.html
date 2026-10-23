@@ -49,11 +49,7 @@
 		
 	];
 
-
-	for( var c = 0; c < qrcodes.length; c++ ) {
-
-		document.body.appendChild( qrcodes[ c ] );
-	}
+	qrcodes.forEach( ( element ) => document.body.appendChild( element ) )
 
 </script>
 
