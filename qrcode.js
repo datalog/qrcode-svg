@@ -499,8 +499,8 @@ function QRCode( Q ) {
 					if( optimized ) {
 						d++;
 						if( !modules[ y ][ x - 1 ] )
-							path += 'M' + x + ',' + y + 'h' + d + 'v1h-' + d + 'v-1z', d = 0;
-					} else path += 'M' + x + ',' + y + 'h1v1h-1v-1z';
+							path += 'M' + x + ',' + y + 'h' + d + 'v1h-' + d + 'z', d = 0;
+					} else path += 'M' + x + ',' + y + 'h1v1h-1z';
 				}
 			}
 		}
